@@ -223,18 +223,14 @@ elif st.session_state.pantalla == 5:
     st.progress(100)
 
     st.balloons()
-    st.snow()
 
-    corazones()
-
-    st.image("foto5.jpeg")
+    st.image("foto5.jpeg", use_container_width=True)
 
     escribir("🎂 FELICES 27 AÑOS 🎂", 0.08)
 
     st.markdown("---")
 
-    st.markdown(
-        """
+    st.markdown("""
 # ❤️
 
 Hoy celebramos mucho más que un cumpleaños.
@@ -258,16 +254,15 @@ Gracias por ser tú.
 Nunca cambies.
 
 ❤️ Te quiero muchísimo ❤️
-"""
-    )
+""")
 
-st.markdown("""
-    <div style='text-align:center;font-size:45px;line-height:1.8'>
-    ❤️ 💖 💕 💗 💘 💝 💞 💓 ❤️ 💖 💕 💗 💘 💝 💞 💓 ❤️<br>
-    💖 💕 ❤️ 💘 💝 💗 💞 💓 💖 💕 ❤️ 💘 💝 💗 💞 💓
-    </div>
-    """, unsafe_allow_html=True)
-st.balloons()
-corazones()
+    st.markdown("""
+<div style='text-align:center;font-size:45px;line-height:1.8'>
+❤️ 💖 💕 💗 💘 💝 💞 💓 ❤️ 💖 💕 💗 💘 💝 💞 💓 ❤️<br>
+💖 💕 ❤️ 💘 💝 💗 💞 💓 💖 💕 ❤️ 💘 💝 💗 💞 💓
+</div>
+""", unsafe_allow_html=True)
 
-st.success("🎉 Feliz cumpleaños 🎉")
+    st.balloons()
+
+    st.success("🎉 Feliz cumpleaños 🎉")
