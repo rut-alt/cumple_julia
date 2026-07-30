@@ -79,23 +79,23 @@ elif st.session_state.pantalla == 1:
 
     st.header("💖 Primera misión")
 
-    st.write("### ¿Hace cuántos años somos amigas? 🤔❤️")
+    st.write("### ¿Hace cuántos años somos amigas? ")
 
     opcion = st.radio(
         "",
         (
             "Desde hace 5 años.",
             "Menos de 2 años.",
-            "Desde la Primera Guerra Mundial por lo menos 😂❤️"
+            "Desde la Primera Guerra Mundial por lo menos "
         )
     )
 
     if st.button("Responder ❤️"):
 
-        if opcion == "Desde la Primera Guerra Mundial por lo menos 😂❤️":
+        if opcion == "Desde la Primera Guerra Mundial por lo menos ":
             st.session_state.respuesta1_ok = True
         else:
-            st.error("¿Pero cómo que eso? 😂 ¡Vuelve a intentarlo!")
+            st.error("¿Pero cómo? ¡Vuelve a intentarlo!")
 
     if st.session_state.respuesta1_ok:
 
@@ -125,24 +125,35 @@ elif st.session_state.pantalla == 2:
 
     st.header("💖 Segunda misión")
 
-    edad = st.number_input("¿Cuántos años cumples hoy?", 1, 100)
+    st.write("### ¿Cuál es la carcajada que más recuerdo contigo?")
+
+    opcion = st.radio(
+        "",
+        (
+            "En tu pueblo cuando tu madre nos dijo que cómo le gustaba vernos así. ",
+            "Con la canción de 'tu tu ru ru tu ru ru ru' volviendo de fiesta. ",
+            "Da igual cuál recuerde más... ojalá añadir mil más. "
+        )
+    )
 
     if st.button("Responder ❤️"):
 
-        if edad == 27:
+        if opcion == "Da igual cuál recuerde más... ojalá añadir mil más. ❤️":
             st.session_state.respuesta2_ok = True
         else:
-            st.error("Pista... naciste en 1999 😉")
+            st.error("Mmmmm... esa también fue muy buena")
 
     if st.session_state.respuesta2_ok:
 
-        st.success("¡Correcto!")
+        st.success("❤️ Exactamente ❤️")
 
         st.balloons()
 
-        st.image("foto2.jpeg")
+        st.image("foto2.jpeg", use_container_width=True)
 
-        escribir("Gracias por cada risa, cada locura y cada momento juntas ❤️")
+        escribir("Porque lo mejor nunca fue un momento concreto...")
+
+        escribir("Lo mejor ha sido compartir todos esos momentos contigo. ❤️")
 
         if st.button("Continuar ➜"):
 
@@ -163,19 +174,19 @@ elif st.session_state.pantalla == 3:
     opcion = st.radio(
         "¿Qué significa nuestra amistad?",
         (
-            "Solo unas fotos",
-            "Una amistad cualquiera",
-            "Un tesoro ❤️",
-            "Nada especial"
+            "Un tesoro",
+            "Un regalo del universo,
+            "Es mi karma positivo",
+            "Todas son correctas"
         )
     )
 
     if st.button("Elegir ❤️"):
 
-        if opcion == "Un tesoro ❤️":
+        if opcion == "Todas son correctas":
             st.session_state.respuesta3_ok = True
         else:
-            st.error("No te creo ni tú 😂")
+            st.error("mmmmm, algo más no?")
 
     if st.session_state.respuesta3_ok:
 
@@ -185,7 +196,7 @@ elif st.session_state.pantalla == 3:
 
         st.image("foto3.jpeg")
 
-        escribir("Siempre consigues hacer mejores incluso los días normales ❤️")
+        escribir("De verdad pienso que tu amistad es lo que me ha regalado el universo para compensar todo lo malo. Te quiero tanto.")
 
         if st.button("Seguir ➜"):
 
@@ -237,11 +248,11 @@ Hoy celebramos mucho más que un cumpleaños.
 
 Celebramos tu sonrisa.
 
-Celebramos tu forma de hacer feliz a la gente.
+Celebramos tu forma de hacer feliz a todas las personas que te rodean.
 
 Celebramos todos los recuerdos que ya tenemos...
 
-...y todos los que todavía nos quedan por vivir.
+...y todos los que todavía nos quedan por vivir. Porque hasta los 89, flipas... queda mucho jeje.
 
 ❤️
 
@@ -249,11 +260,11 @@ Espero que este pequeño regalo te saque una enorme sonrisa.
 
 Gracias por estar siempre.
 
-Gracias por ser tú.
+Gracias por ser tú y por hacer que yo sea mejor.
 
 Nunca cambies.
 
-❤️ Te quiero muchísimo ❤️
+❤️ Te quiero muchísimo infinito❤️
 """)
 
     st.markdown("""
