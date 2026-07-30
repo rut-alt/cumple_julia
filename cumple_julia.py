@@ -158,9 +158,9 @@ elif st.session_state.pantalla == 2:
         st.markdown("""
         ### ❤️
 
-        Porque lo mejor nunca fue un momento concreto.
+        Yo no tengo un momento favorito contigo.
 
-        Lo mejor ha sido compartir todos esos momentos contigo.
+        Lo mejor es compartir todos esos momentos contigo.
         """)
 
         if st.button("Continuar ➜"):
@@ -207,7 +207,7 @@ elif st.session_state.pantalla == 3:
         st.markdown("""
     ### ❤️
 
-    Estar contigo es tan genial que creo que cada vez que compartimos un ratito rejuvenezco. .
+    Estar contigo es tan genial que creo que cada vez que compartimos un ratito rejuvenezco. Te dejo por aqui una fotito de cuando pesabamos 95kg cada una.
     """)
 
         if st.button("Seguir ➜"):
