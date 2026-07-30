@@ -115,7 +115,8 @@ elif st.session_state.pantalla == 1:
 
         La verdad es que parece que llevemos siendo amigas toda la vida.
 
-        Y espero que todavía nos queden miles de aventuras juntas.
+        Y espero que todavía nos queden miles de aventuras juntas. Una fotillo del último concierto, que no se te olvide que hemos dicho que vamos a ir a Mexico juntas, 
+        (la próxima vez me dices como se visten las mexicanas, gracias).
         """)
 
         if st.button("Siguiente ➜"):
@@ -280,7 +281,7 @@ Espero que este pequeño regalo te saque una enorme sonrisa.
 Gracias por estar siempre.
 Gracias por ser tú y por hacer que yo sea mejor.
 
-❤️ Te quiero muchísimo infinito❤️
+❤️ Te quiero muchísimo infinito❤️. Creo que ya no hay mas corazones en el mundo. Los he utilizado todos para tu app pero gueno...
 """)
 
     st.markdown("""
