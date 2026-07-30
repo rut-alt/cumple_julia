@@ -105,9 +105,13 @@ elif st.session_state.pantalla == 1:
 
         st.image("foto1.jpeg", use_container_width=True)
 
-        escribir("La verdad es que parece que llevemos siendo amigas toda la vida... ❤️")
+        st.markdown("""
+        ### ❤️
 
-        escribir("Y espero que todavía nos queden miles de aventuras juntas.")
+        La verdad es que parece que llevemos siendo amigas toda la vida.
+
+        Y espero que todavía nos queden miles de aventuras juntas.
+        """)
 
         if st.button("Siguiente ➜"):
 
@@ -151,9 +155,13 @@ elif st.session_state.pantalla == 2:
 
         st.image("foto2.jpeg", use_container_width=True)
 
-        escribir("Porque lo mejor nunca fue un momento concreto...")
+        st.markdown("""
+        ### ❤️
 
-        escribir("Lo mejor ha sido compartir todos esos momentos contigo. ❤️")
+        Porque lo mejor nunca fue un momento concreto.
+
+        Lo mejor ha sido compartir todos esos momentos contigo.
+        """)
 
         if st.button("Continuar ➜"):
 
@@ -196,7 +204,11 @@ elif st.session_state.pantalla == 3:
 
         st.image("foto3.jpeg")
 
-        escribir("De verdad pienso que tu amistad es lo que me ha regalado el universo para compensar todo lo malo. Te quiero tanto.")
+        st.markdown("""
+    ### ❤️
+
+    Estar contigo es tan genial que creo que cada vez que compartimos un ratito rejuvenezco. .
+    """)
 
         if st.button("Seguir ➜"):
 
@@ -216,9 +228,13 @@ elif st.session_state.pantalla == 4:
 
     st.image("foto4.jpeg")
 
-    escribir("Hay personas que pasan por tu vida...")
+    st.markdown("""
+    ### ❤️
 
-    escribir("Y otras que se quedan para siempre ❤️")
+    Hay personas que pasan por tu vida...
+
+    Y otras que se quedan para siempre. Como tú jeje.
+    """)
 
     if st.button("Última sorpresa 🎁"):
 
