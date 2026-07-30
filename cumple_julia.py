@@ -55,15 +55,20 @@ if st.session_state.pantalla == 0:
 
     st.title("🎉 FELIZ CUMPLEAÑOS 🎉")
 
-    escribir("Hoy no quiero regalarte solo un mensaje...")
+    st.markdown("""
+## ❤️
 
-    st.write("")
+Hoy no quería regalarte simplemente un mensaje.
 
-    escribir("Quiero regalarte un pequeño viaje por algunos de nuestros recuerdos ❤️")
+Quería regalarte un pequeño viaje por algunos de nuestros recuerdos.
+
+Espero que te guste tanto como a mí prepararlo.
+
+✨ ¿Empezamos?
+""")
 
     st.progress(0)
 
-    st.balloons()
 
     if st.button("✨ Empezar ✨", use_container_width=True):
         st.session_state.pantalla = 1
@@ -260,13 +265,11 @@ elif st.session_state.pantalla == 5:
     st.markdown("""
 # ❤️
 
-Hoy celebramos mucho más que un cumpleaños.
+Muchas felicidades, me gusta mucho estar contigo. Muchas gracias por ser mi amiga.
+Cuando estoy contigo estoy contenta, gracias.
+Me gusta mucho hacer cosas contigo, muchas gracias. 
 
-Celebramos tu sonrisa.
-
-Celebramos tu forma de hacer feliz a todas las personas que te rodean.
-
-Celebramos todos los recuerdos que ya tenemos...
+ A parte de tu cumple, celebramos todos los recuerdos que ya tenemos...
 
 ...y todos los que todavía nos quedan por vivir. Porque hasta los 89, flipas... queda mucho jeje.
 
@@ -275,10 +278,7 @@ Celebramos todos los recuerdos que ya tenemos...
 Espero que este pequeño regalo te saque una enorme sonrisa.
 
 Gracias por estar siempre.
-
 Gracias por ser tú y por hacer que yo sea mejor.
-
-Nunca cambies.
 
 ❤️ Te quiero muchísimo infinito❤️
 """)
