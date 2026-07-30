@@ -77,26 +77,37 @@ elif st.session_state.pantalla == 1:
 
     st.progress(20)
 
-    st.header("🎂 Primera misión")
+    st.header("💖 Primera misión")
 
-    respuesta = st.text_input("¿Qué día naciste? (dd/mm/aaaa)")
+    st.write("### ¿Hace cuántos años somos amigas? 🤔❤️")
 
-    if st.button("Comprobar ❤️"):
+    opcion = st.radio(
+        "",
+        (
+            "Desde hace 5 años.",
+            "Menos de 2 años.",
+            "Desde la Primera Guerra Mundial por lo menos 😂❤️"
+        )
+    )
 
-        if respuesta.strip() == "31/07/1999":
+    if st.button("Responder ❤️"):
+
+        if opcion == "Desde la Primera Guerra Mundial por lo menos 😂❤️":
             st.session_state.respuesta1_ok = True
         else:
-            st.error("Ups... ¡esa no es! 😂")
+            st.error("¿Pero cómo que eso? 😂 ¡Vuelve a intentarlo!")
 
     if st.session_state.respuesta1_ok:
 
-        st.success("¡¡Correcto!! ❤️")
-
         st.balloons()
 
-        st.image("foto1.jpeg")
+        st.success("¡¡Correcto!! ❤️")
 
-        escribir("Así empezó una amistad que no cambiaría por nada del mundo.")
+        st.image("foto1.jpeg", use_container_width=True)
+
+        escribir("La verdad es que parece que llevemos siendo amigas toda la vida... ❤️")
+
+        escribir("Y espero que todavía nos queden miles de aventuras juntas.")
 
         if st.button("Siguiente ➜"):
 
@@ -250,7 +261,13 @@ Nunca cambies.
 """
     )
 
-    st.balloons()
-    st.snow()
+st.markdown("""
+    <div style='text-align:center;font-size:45px;line-height:1.8'>
+    ❤️ 💖 💕 💗 💘 💝 💞 💓 ❤️ 💖 💕 💗 💘 💝 💞 💓 ❤️<br>
+    💖 💕 ❤️ 💘 💝 💗 💞 💓 💖 💕 ❤️ 💘 💝 💗 💞 💓
+    </div>
+    """, unsafe_allow_html=True)
+st.balloons()
+corazones()
 
-    st.success("🎉 Feliz cumpleaños 🎉")
+st.success("🎉 Feliz cumpleaños 🎉")
