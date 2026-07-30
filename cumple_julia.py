@@ -1,6 +1,5 @@
 import streamlit as st
 import time
-import random
 
 # ---------------- CONFIG ----------------
 
@@ -14,6 +13,15 @@ st.set_page_config(
 
 if "pantalla" not in st.session_state:
     st.session_state.pantalla = 0
+
+if "respuesta1_ok" not in st.session_state:
+    st.session_state.respuesta1_ok = False
+
+if "respuesta2_ok" not in st.session_state:
+    st.session_state.respuesta2_ok = False
+
+if "respuesta3_ok" not in st.session_state:
+    st.session_state.respuesta3_ok = False
 
 # ---------------- FUNCIONES ----------------
 
@@ -31,16 +39,15 @@ def escribir(texto, velocidad=0.03):
 
 
 def corazones():
-    st.markdown(
-        """
-        <div style='text-align:center;font-size:35px'>
-        ❤️ 💖 💕 💗 💘 💝 💞 💓 ❤️ 💖 💕 💗 💘 💝 💞 💓 ❤️
-        </div>
-        """,
-        unsafe_allow_html=True,
-    )
+    st.markdown("""
+    <div style='text-align:center;font-size:35px'>
+    ❤️ 💖 💕 💗 💘 💝 💞 💓 ❤️ 💖 💕 💗 💘 💝 💞 💓 ❤️
+    </div>
+    """, unsafe_allow_html=True)
 
-# ---------------- PORTADA ----------------
+# =====================================================
+# PORTADA
+# =====================================================
 
 if st.session_state.pantalla == 0:
 
@@ -54,8 +61,6 @@ if st.session_state.pantalla == 0:
 
     escribir("Quiero regalarte un pequeño viaje por algunos de nuestros recuerdos ❤️")
 
-    st.write("")
-    st.write("")
     st.progress(0)
 
     st.balloons()
@@ -64,7 +69,9 @@ if st.session_state.pantalla == 0:
         st.session_state.pantalla = 1
         st.rerun()
 
-# ---------------- FOTO 1 ----------------
+# =====================================================
+# PANTALLA 1
+# =====================================================
 
 elif st.session_state.pantalla == 1:
 
@@ -77,24 +84,29 @@ elif st.session_state.pantalla == 1:
     if st.button("Comprobar ❤️"):
 
         if respuesta.strip() == "31/07/1999":
-
-            st.balloons()
-
-            st.success("¡¡Correcto!! ❤️")
-
-            st.image("foto1.jpeg")
-
-            escribir("Así empezó una amistad que no cambiaría por nada del mundo.")
-
-            if st.button("Siguiente ➜"):
-                st.session_state.pantalla = 2
-                st.rerun()
-
+            st.session_state.respuesta1_ok = True
         else:
-
             st.error("Ups... ¡esa no es! 😂")
 
-# ---------------- FOTO 2 ----------------
+    if st.session_state.respuesta1_ok:
+
+        st.success("¡¡Correcto!! ❤️")
+
+        st.balloons()
+
+        st.image("foto1.jpeg")
+
+        escribir("Así empezó una amistad que no cambiaría por nada del mundo.")
+
+        if st.button("Siguiente ➜"):
+
+            st.session_state.pantalla = 2
+            st.session_state.respuesta1_ok = False
+            st.rerun()
+
+# =====================================================
+# PANTALLA 2
+# =====================================================
 
 elif st.session_state.pantalla == 2:
 
@@ -104,25 +116,32 @@ elif st.session_state.pantalla == 2:
 
     edad = st.number_input("¿Cuántos años cumples hoy?", 1, 100)
 
-    if st.button("Responder"):
+    if st.button("Responder ❤️"):
 
         if edad == 27:
-
-            st.balloons()
-
-            st.image("foto2.jpeg")
-
-            escribir("Gracias por cada risa, cada locura y cada momento juntas.")
-
-            if st.button("Continuar ❤️"):
-                st.session_state.pantalla = 3
-                st.rerun()
-
+            st.session_state.respuesta2_ok = True
         else:
-
             st.error("Pista... naciste en 1999 😉")
 
-# ---------------- FOTO 3 ----------------
+    if st.session_state.respuesta2_ok:
+
+        st.success("¡Correcto!")
+
+        st.balloons()
+
+        st.image("foto2.jpeg")
+
+        escribir("Gracias por cada risa, cada locura y cada momento juntas ❤️")
+
+        if st.button("Continuar ➜"):
+
+            st.session_state.pantalla = 3
+            st.session_state.respuesta2_ok = False
+            st.rerun()
+
+# =====================================================
+# PANTALLA 3
+# =====================================================
 
 elif st.session_state.pantalla == 3:
 
@@ -131,44 +150,41 @@ elif st.session_state.pantalla == 3:
     st.header("💕 Tercera misión")
 
     opcion = st.radio(
-
         "¿Qué significa nuestra amistad?",
-
-        [
-
+        (
             "Solo unas fotos",
-
             "Una amistad cualquiera",
-
             "Un tesoro ❤️",
-
             "Nada especial"
-
-        ]
-
+        )
     )
 
-    if st.button("Elegir"):
+    if st.button("Elegir ❤️"):
 
         if opcion == "Un tesoro ❤️":
-
-            st.success("¡Exacto!")
-
-            st.balloons()
-
-            st.image("foto3.jpeg")
-
-            escribir("Siempre consigues hacer mejores incluso los días normales.")
-
-            if st.button("Seguir ❤️"):
-                st.session_state.pantalla = 4
-                st.rerun()
-
+            st.session_state.respuesta3_ok = True
         else:
-
             st.error("No te creo ni tú 😂")
 
-# ---------------- FOTO 4 ----------------
+    if st.session_state.respuesta3_ok:
+
+        st.success("¡Exacto!")
+
+        st.balloons()
+
+        st.image("foto3.jpeg")
+
+        escribir("Siempre consigues hacer mejores incluso los días normales ❤️")
+
+        if st.button("Seguir ➜"):
+
+            st.session_state.pantalla = 4
+            st.session_state.respuesta3_ok = False
+            st.rerun()
+
+# =====================================================
+# PANTALLA 4
+# =====================================================
 
 elif st.session_state.pantalla == 4:
 
@@ -183,10 +199,13 @@ elif st.session_state.pantalla == 4:
     escribir("Y otras que se quedan para siempre ❤️")
 
     if st.button("Última sorpresa 🎁"):
+
         st.session_state.pantalla = 5
         st.rerun()
 
-# ---------------- FINAL ----------------
+# =====================================================
+# FINAL
+# =====================================================
 
 elif st.session_state.pantalla == 5:
 
@@ -219,19 +238,19 @@ Celebramos todos los recuerdos que ya tenemos...
 
 ❤️
 
-Espero que este pequeño regalo te saque al menos una sonrisa.
+Espero que este pequeño regalo te saque una enorme sonrisa.
 
-Porque personas como tú hacen el mundo muchísimo más bonito.
+Gracias por estar siempre.
 
-Nunca dejes de ser quien eres.
+Gracias por ser tú.
 
-Te quiero muchísimo.
+Nunca cambies.
 
-❤️ Feliz cumpleaños ❤️
+❤️ Te quiero muchísimo ❤️
 """
     )
 
     st.balloons()
     st.snow()
 
-    st.success("Gracias por ser tú ❤️")
+    st.success("🎉 Feliz cumpleaños 🎉")
