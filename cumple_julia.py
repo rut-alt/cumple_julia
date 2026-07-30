@@ -142,7 +142,7 @@ elif st.session_state.pantalla == 2:
 
     if st.button("Responder ❤️"):
 
-        if opcion == "Da igual cuál recuerde más... ojalá añadir mil más. ❤️":
+        if opcion == "Da igual cuál recuerde más... ojalá añadir mil más. ":
             st.session_state.respuesta2_ok = True
         else:
             st.error("Mmmmm... esa también fue muy buena")
