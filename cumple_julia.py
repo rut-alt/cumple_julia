@@ -175,7 +175,7 @@ elif st.session_state.pantalla == 3:
         "¿Qué significa nuestra amistad?",
         (
             "Un tesoro",
-            "Un regalo del universo,
+            "Un regalo del universo",
             "Es mi karma positivo",
             "Todas son correctas"
         )
